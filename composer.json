@@ -1,0 +1,39 @@
+{
+    "name": "cardoso/startup-kit-orders",
+    "description": "Startup Kit — Orders module: order management domain",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "cardoso/startup-kit-core": "^1.0",
+        "illuminate/contracts": "^12.0",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^10.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cardoso\\StartupKit\\Orders\\": "src/Orders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cardoso\\StartupKit\\Orders\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cardoso\\StartupKit\\Orders\\StartupKitOrdersServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
