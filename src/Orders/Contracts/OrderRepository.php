@@ -15,4 +15,9 @@ interface OrderRepository
     public function byId(OrderId $id): Result;
 
     public function delete(Order $order): Result;
+
+    /**
+     * @return Result<list<Order>>
+     */
+    public function list(?string $customerId = null, ?string $status = null): Result;
 }

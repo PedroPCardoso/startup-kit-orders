@@ -8,7 +8,6 @@ use Cardoso\StartupKit\Core\Primitives\Errors\ConflictError;
 use Cardoso\StartupKit\Core\Primitives\Errors\ValidationError;
 use Cardoso\StartupKit\Core\Primitives\Result\Result;
 use Cardoso\StartupKit\Core\ValueObjects\Money;
-use Cardoso\StartupKit\Orders\Domain\Events\OrderPlaced;
 
 final class Order
 {
@@ -163,5 +162,30 @@ final class Order
     public function updatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Reconstitutes an Order from persistent storage without running domain invariants.
+     *
+     * @param list<OrderLine> $lines
+     */
+    public static function reconstitute(
+        OrderId $id,
+        OrderStatus $status,
+        array $lines,
+        ?string $customerId,
+        \DateTimeImmutable $createdAt,
+        ?\DateTimeImmutable $updatedAt,
+    ): self {
+        $order = new self(
+            id: $id,
+            status: $status,
+            createdAt: $createdAt,
+            customerId: $customerId,
+            updatedAt: $updatedAt,
+        );
+        $order->lines = $lines;
+
+        return $order;
     }
 }

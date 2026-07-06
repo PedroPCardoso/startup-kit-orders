@@ -6,7 +6,13 @@ namespace Cardoso\StartupKit\Orders\Http\Controllers;
 
 use Cardoso\StartupKit\Core\Api\Http\BaseController;
 use Cardoso\StartupKit\Core\Primitives\Cqrs\CommandBus;
+use Cardoso\StartupKit\Core\Primitives\Cqrs\QueryBus;
 use Cardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
+use Cardoso\StartupKit\Orders\Application\Queries\GetOrderById;
+use Cardoso\StartupKit\Orders\Application\Queries\ListOrders;
+use Cardoso\StartupKit\Orders\Domain\Order;
+use Cardoso\StartupKit\Orders\Http\Requests\PlaceOrderRequest;
+use Cardoso\StartupKit\Orders\Http\Resources\OrderResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -14,22 +20,38 @@ final class OrderController extends BaseController
 {
     public function __construct(
         private readonly CommandBus $commandBus,
+        private readonly QueryBus $queryBus,
     ) {}
 
-    public function store(Request $request): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $validated = $request->validate([
-            'items' => 'required|array|min:1',
-            'items.*.product_id' => 'required|string',
-            'items.*.description' => 'required|string',
-            'items.*.quantity' => 'required|integer|min:1',
-            'items.*.unit_price' => 'required|integer|min:0',
-            'customer_id' => 'nullable|string',
-        ]);
+        $result = $this->queryBus->ask(new ListOrders(
+            customerId: $request->query('customer_id'),
+            status: $request->query('status'),
+        ));
 
+        return $this->respondWith(
+            $result->map(fn(array $orders) => array_map(
+                fn(Order $order) => new OrderResource($order),
+                $orders,
+            )),
+        );
+    }
+
+    public function show(string $id): JsonResponse
+    {
+        $result = $this->queryBus->ask(new GetOrderById($id));
+
+        return $this->respondWith(
+            $result->map(fn(Order $order) => new OrderResource($order)),
+        );
+    }
+
+    public function store(PlaceOrderRequest $request): JsonResponse
+    {
         $result = $this->commandBus->dispatch(new PlaceOrder(
-            items: $validated['items'],
-            customerId: $validated['customer_id'] ?? null,
+            items: $request->validated('items'),
+            customerId: $request->validated('customer_id'),
         ));
 
         return $this->respondWith($result, 201);
