@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Domain;
+namespace PedroPCardoso\StartupKit\Orders\Domain;
 
-use Cardoso\StartupKit\Core\ValueObjects\Uuid;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Uuid;
 
 final class OrderId
 {

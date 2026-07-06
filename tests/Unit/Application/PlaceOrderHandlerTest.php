@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Tests\Unit\Application;
+namespace PedroPCardoso\StartupKit\Orders\Tests\Unit\Application;
 
-use Cardoso\StartupKit\Core\Primitives\Result\Result;
-use Cardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
-use Cardoso\StartupKit\Orders\Application\Handlers\PlaceOrderHandler;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Domain\OrderStatus;
-use Cardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
+use PedroPCardoso\StartupKit\Core\Primitives\Result\Result;
+use PedroPCardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
+use PedroPCardoso\StartupKit\Orders\Application\Handlers\PlaceOrderHandler;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderStatus;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -85,12 +85,12 @@ final class PlaceOrderHandlerTest extends TestCase
     public function returns_err_when_repository_fails(): void
     {
         $failingRepo = new class implements OrderRepository {
-            public function save(\Cardoso\StartupKit\Orders\Domain\Order $order): Result
+            public function save(\PedroPCardoso\StartupKit\Orders\Domain\Order $order): Result
             {
-                return Result::err(new \Cardoso\StartupKit\Orders\Infrastructure\StorageError('storage.fail', 'boom'));
+                return Result::err(new \PedroPCardoso\StartupKit\Orders\Infrastructure\StorageError('storage.fail', 'boom'));
             }
             public function byId(OrderId $id): Result { return Result::ok(null); }
-            public function delete(\Cardoso\StartupKit\Orders\Domain\Order $order): Result { return Result::ok(null); }
+            public function delete(\PedroPCardoso\StartupKit\Orders\Domain\Order $order): Result { return Result::ok(null); }
             public function list(?string $c = null, ?string $s = null): Result { return Result::ok([]); }
         };
 

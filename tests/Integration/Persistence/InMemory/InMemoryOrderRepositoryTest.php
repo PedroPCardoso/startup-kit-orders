@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Tests\Integration\Persistence\InMemory;
+namespace PedroPCardoso\StartupKit\Orders\Tests\Integration\Persistence\InMemory;
 
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
-use Cardoso\StartupKit\Orders\Tests\Integration\Persistence\OrderRepositoryContractTest;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
+use PedroPCardoso\StartupKit\Orders\Tests\Integration\Persistence\OrderRepositoryContractTest;
 
 final class InMemoryOrderRepositoryTest extends OrderRepositoryContractTest
 {

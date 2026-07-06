@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Http\Resources;
+namespace PedroPCardoso\StartupKit\Orders\Http\Resources;
 
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderLine;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderLine;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**

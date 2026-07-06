@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Contracts;
+namespace PedroPCardoso\StartupKit\Orders\Contracts;
 
-use Cardoso\StartupKit\Core\Primitives\Result\Result;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Core\Primitives\Result\Result;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
 
 interface OrderRepository
 {

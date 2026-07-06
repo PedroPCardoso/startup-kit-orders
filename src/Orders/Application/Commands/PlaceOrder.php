@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Application\Commands;
+namespace PedroPCardoso\StartupKit\Orders\Application\Commands;
 
-use Cardoso\StartupKit\Core\Primitives\Cqrs\Command;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\Command;
 
 final class PlaceOrder implements Command
 {

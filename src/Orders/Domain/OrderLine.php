@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Domain;
+namespace PedroPCardoso\StartupKit\Orders\Domain;
 
-use Cardoso\StartupKit\Core\ValueObjects\Money;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Money;
 
 final class OrderLine
 {

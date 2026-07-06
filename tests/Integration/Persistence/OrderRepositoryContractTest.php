@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Tests\Integration\Persistence;
+namespace PedroPCardoso\StartupKit\Orders\Tests\Integration\Persistence;
 
-use Cardoso\StartupKit\Core\ValueObjects\Money;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Domain\OrderLine;
-use Cardoso\StartupKit\Orders\Domain\OrderStatus;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Money;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderLine;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderStatus;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

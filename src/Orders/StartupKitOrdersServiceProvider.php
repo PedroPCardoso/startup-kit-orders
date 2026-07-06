@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders;
+namespace PedroPCardoso\StartupKit\Orders;
 
-use Cardoso\StartupKit\Orders\Application\Handlers\GetOrderByIdHandler;
-use Cardoso\StartupKit\Orders\Application\Handlers\ListOrdersHandler;
-use Cardoso\StartupKit\Orders\Application\Handlers\PlaceOrderHandler;
-use Cardoso\StartupKit\Orders\Application\Queries\GetOrderById;
-use Cardoso\StartupKit\Orders\Application\Queries\ListOrders;
-use Cardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Infrastructure\Persistence\MySql\MySqlOrderRepository;
-use Cardoso\StartupKit\Orders\Infrastructure\Persistence\Postgres\PostgresOrderRepository;
+use PedroPCardoso\StartupKit\Orders\Application\Handlers\GetOrderByIdHandler;
+use PedroPCardoso\StartupKit\Orders\Application\Handlers\ListOrdersHandler;
+use PedroPCardoso\StartupKit\Orders\Application\Handlers\PlaceOrderHandler;
+use PedroPCardoso\StartupKit\Orders\Application\Queries\GetOrderById;
+use PedroPCardoso\StartupKit\Orders\Application\Queries\ListOrders;
+use PedroPCardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\MySql\MySqlOrderRepository;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\Postgres\PostgresOrderRepository;
 use Illuminate\Support\ServiceProvider;
 
 final class StartupKitOrdersServiceProvider extends ServiceProvider
@@ -49,8 +49,8 @@ final class StartupKitOrdersServiceProvider extends ServiceProvider
 
     private function registerHandlers(): void
     {
-        $commandBus = $this->app->make(\Cardoso\StartupKit\Core\Primitives\Cqrs\CommandBus::class);
-        $queryBus   = $this->app->make(\Cardoso\StartupKit\Core\Primitives\Cqrs\QueryBus::class);
+        $commandBus = $this->app->make(\PedroPCardoso\StartupKit\Core\Primitives\Cqrs\CommandBus::class);
+        $queryBus   = $this->app->make(\PedroPCardoso\StartupKit\Core\Primitives\Cqrs\QueryBus::class);
 
         $commandBus->register(PlaceOrder::class, PlaceOrderHandler::class);
         $queryBus->register(GetOrderById::class, GetOrderByIdHandler::class);

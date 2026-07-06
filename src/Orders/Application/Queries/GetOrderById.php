@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Application\Queries;
+namespace PedroPCardoso\StartupKit\Orders\Application\Queries;
 
-use Cardoso\StartupKit\Core\Primitives\Cqrs\Query;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\Query;
 
 final class GetOrderById implements Query
 {

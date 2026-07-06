@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Tests\Unit\Application;
+namespace PedroPCardoso\StartupKit\Orders\Tests\Unit\Application;
 
-use Cardoso\StartupKit\Core\ValueObjects\Money;
-use Cardoso\StartupKit\Orders\Application\Handlers\GetOrderByIdHandler;
-use Cardoso\StartupKit\Orders\Application\Queries\GetOrderById;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Domain\OrderLine;
-use Cardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Money;
+use PedroPCardoso\StartupKit\Orders\Application\Handlers\GetOrderByIdHandler;
+use PedroPCardoso\StartupKit\Orders\Application\Queries\GetOrderById;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderLine;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

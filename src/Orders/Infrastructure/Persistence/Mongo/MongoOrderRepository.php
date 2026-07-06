@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Infrastructure\Persistence\Mongo;
+namespace PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\Mongo;
 
-use Cardoso\StartupKit\Core\Primitives\Errors\NotFoundError;
-use Cardoso\StartupKit\Core\Primitives\Result\Result;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Infrastructure\StorageError;
+use PedroPCardoso\StartupKit\Core\Primitives\Errors\NotFoundError;
+use PedroPCardoso\StartupKit\Core\Primitives\Result\Result;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\StorageError;
 
 /**
  * MongoDB implementation of OrderRepository.

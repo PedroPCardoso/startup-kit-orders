@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Domain\Events;
+namespace PedroPCardoso\StartupKit\Orders\Domain\Events;
 
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Domain\OrderStatus;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderStatus;
 
 final class OrderPlaced
 {

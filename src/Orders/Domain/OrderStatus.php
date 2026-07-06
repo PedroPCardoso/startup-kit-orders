@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Domain;
+namespace PedroPCardoso\StartupKit\Orders\Domain;
 
 enum OrderStatus: string
 {

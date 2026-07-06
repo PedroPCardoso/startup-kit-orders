@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Tests\Unit\Application;
+namespace PedroPCardoso\StartupKit\Orders\Tests\Unit\Application;
 
-use Cardoso\StartupKit\Core\Contracts\EventBus;
+use PedroPCardoso\StartupKit\Core\Contracts\EventBus;
 
 final class FakeEventBus implements EventBus
 {

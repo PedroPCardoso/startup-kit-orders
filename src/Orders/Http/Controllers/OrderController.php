@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Http\Controllers;
+namespace PedroPCardoso\StartupKit\Orders\Http\Controllers;
 
-use Cardoso\StartupKit\Core\Api\Http\BaseController;
-use Cardoso\StartupKit\Core\Primitives\Cqrs\CommandBus;
-use Cardoso\StartupKit\Core\Primitives\Cqrs\QueryBus;
-use Cardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
-use Cardoso\StartupKit\Orders\Application\Queries\GetOrderById;
-use Cardoso\StartupKit\Orders\Application\Queries\ListOrders;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Http\Requests\PlaceOrderRequest;
-use Cardoso\StartupKit\Orders\Http\Resources\OrderResource;
+use PedroPCardoso\StartupKit\Core\Api\Http\BaseController;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\CommandBus;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\QueryBus;
+use PedroPCardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
+use PedroPCardoso\StartupKit\Orders\Application\Queries\GetOrderById;
+use PedroPCardoso\StartupKit\Orders\Application\Queries\ListOrders;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Http\Requests\PlaceOrderRequest;
+use PedroPCardoso\StartupKit\Orders\Http\Resources\OrderResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 

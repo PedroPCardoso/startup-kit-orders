@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Cardoso\StartupKit\Orders\Http\Controllers\OrderController;
+use PedroPCardoso\StartupKit\Orders\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix(config('startup-kit-orders.routes.prefix', 'orders'))

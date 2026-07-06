@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Infrastructure;
+namespace PedroPCardoso\StartupKit\Orders\Infrastructure;
 
-use Cardoso\StartupKit\Core\Primitives\Errors\DomainError;
+use PedroPCardoso\StartupKit\Core\Primitives\Errors\DomainError;
 
 final class StorageError extends DomainError
 {

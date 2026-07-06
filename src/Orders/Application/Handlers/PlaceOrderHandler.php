@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Application\Handlers;
+namespace PedroPCardoso\StartupKit\Orders\Application\Handlers;
 
-use Cardoso\StartupKit\Core\Contracts\EventBus;
-use Cardoso\StartupKit\Core\Primitives\Cqrs\CommandHandler;
-use Cardoso\StartupKit\Core\Primitives\Result\Result;
-use Cardoso\StartupKit\Core\ValueObjects\Money;
-use Cardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Domain\Events\OrderPlaced;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Domain\OrderLine;
+use PedroPCardoso\StartupKit\Core\Contracts\EventBus;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\CommandHandler;
+use PedroPCardoso\StartupKit\Core\Primitives\Result\Result;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Money;
+use PedroPCardoso\StartupKit\Orders\Application\Commands\PlaceOrder;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Domain\Events\OrderPlaced;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderLine;
 
 final class PlaceOrderHandler implements CommandHandler
 {
@@ -22,11 +22,11 @@ final class PlaceOrderHandler implements CommandHandler
         private readonly EventBus $eventBus,
     ) {}
 
-    public function handle(\Cardoso\StartupKit\Core\Primitives\Cqrs\Command $command): Result
+    public function handle(\PedroPCardoso\StartupKit\Core\Primitives\Cqrs\Command $command): Result
     {
         if (!$command instanceof PlaceOrder) {
             return Result::err(
-                new \Cardoso\StartupKit\Core\Primitives\Errors\NotFoundError(
+                new \PedroPCardoso\StartupKit\Core\Primitives\Errors\NotFoundError(
                     'handler.mismatch',
                     'Invalid command type.',
                 )

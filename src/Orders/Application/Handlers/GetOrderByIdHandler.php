@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Application\Handlers;
+namespace PedroPCardoso\StartupKit\Orders\Application\Handlers;
 
-use Cardoso\StartupKit\Core\Primitives\Cqrs\Query;
-use Cardoso\StartupKit\Core\Primitives\Cqrs\QueryHandler;
-use Cardoso\StartupKit\Core\Primitives\Errors\ValidationError;
-use Cardoso\StartupKit\Core\Primitives\Result\Result;
-use Cardoso\StartupKit\Orders\Application\Queries\GetOrderById;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\Query;
+use PedroPCardoso\StartupKit\Core\Primitives\Cqrs\QueryHandler;
+use PedroPCardoso\StartupKit\Core\Primitives\Errors\ValidationError;
+use PedroPCardoso\StartupKit\Core\Primitives\Result\Result;
+use PedroPCardoso\StartupKit\Orders\Application\Queries\GetOrderById;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
 
 final class GetOrderByIdHandler implements QueryHandler
 {

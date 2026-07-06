@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Http\Requests;
+namespace PedroPCardoso\StartupKit\Orders\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

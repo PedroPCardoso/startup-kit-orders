@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Cardoso\StartupKit\Orders\Infrastructure\Persistence\MySql;
+namespace PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\MySql;
 
-use Cardoso\StartupKit\Core\Primitives\Errors\NotFoundError;
-use Cardoso\StartupKit\Core\Primitives\Result\Result;
-use Cardoso\StartupKit\Core\ValueObjects\Money;
-use Cardoso\StartupKit\Core\ValueObjects\Uuid;
-use Cardoso\StartupKit\Orders\Contracts\OrderRepository;
-use Cardoso\StartupKit\Orders\Domain\Order;
-use Cardoso\StartupKit\Orders\Domain\OrderId;
-use Cardoso\StartupKit\Orders\Domain\OrderLine;
-use Cardoso\StartupKit\Orders\Domain\OrderStatus;
-use Cardoso\StartupKit\Orders\Infrastructure\Persistence\Eloquent\EloquentOrder;
-use Cardoso\StartupKit\Orders\Infrastructure\StorageError;
+use PedroPCardoso\StartupKit\Core\Primitives\Errors\NotFoundError;
+use PedroPCardoso\StartupKit\Core\Primitives\Result\Result;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Money;
+use PedroPCardoso\StartupKit\Core\ValueObjects\Uuid;
+use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
+use PedroPCardoso\StartupKit\Orders\Domain\Order;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderId;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderLine;
+use PedroPCardoso\StartupKit\Orders\Domain\OrderStatus;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\Eloquent\EloquentOrder;
+use PedroPCardoso\StartupKit\Orders\Infrastructure\StorageError;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 final class MySqlOrderRepository implements OrderRepository
