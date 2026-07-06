@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  *
  * Concrete subclasses implement setUp() to provide the repository instance.
  */
-abstract class OrderRepositoryContractTest extends TestCase
+abstract class OrderRepositoryContractTestCase extends TestCase
 {
     abstract protected function repository(): OrderRepository;
 

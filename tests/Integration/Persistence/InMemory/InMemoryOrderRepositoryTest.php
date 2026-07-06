@@ -6,9 +6,9 @@ namespace PedroPCardoso\StartupKit\Orders\Tests\Integration\Persistence\InMemory
 
 use PedroPCardoso\StartupKit\Orders\Contracts\OrderRepository;
 use PedroPCardoso\StartupKit\Orders\Infrastructure\Persistence\InMemory\InMemoryOrderRepository;
-use PedroPCardoso\StartupKit\Orders\Tests\Integration\Persistence\OrderRepositoryContractTest;
+use PedroPCardoso\StartupKit\Orders\Tests\Integration\Persistence\OrderRepositoryContractTestCase;
 
-final class InMemoryOrderRepositoryTest extends OrderRepositoryContractTest
+final class InMemoryOrderRepositoryTest extends OrderRepositoryContractTestCase
 {
     protected function repository(): OrderRepository
     {
